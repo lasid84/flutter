@@ -1,0 +1,2 @@
+ - https://flutter.dev/ 접속후 SDK 다운
+ - 환경변수 PATH에 D:\FLUTTER\flutter\bin 경로 추가(압축푼 경로)
