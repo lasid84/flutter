@@ -1,5 +1,4 @@
-
-
+import 'package:firebase_login/my_button/my_button.dart';
 import 'package:flutter/material.dart';
 
 class LogIn extends StatelessWidget {
@@ -18,7 +17,6 @@ class LogIn extends StatelessWidget {
         elevation: 0.2,
       ),
       body: _buildButton(),
-
     );
   }
 
@@ -28,31 +26,18 @@ class LogIn extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          ButtonTheme(
-            height: 50.0,
-            child: RaisedButton(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Image.asset('images/glogo.png'),
-                  Text(
-                    'Login with Google',
-                    style: TextStyle(color: Colors.black87, fontSize: 15.0),
-                  ),
-                  Opacity(
-                    opacity: 0.0,
-                    child: Image.asset('images/glogo.png'),
-                  ),
-                ],
-              ),
-              color: Colors.white,
-              onPressed: () {},
+          MyButton(
+            image: Image.asset(
+              'images/glogo.png',
+              scale: 2.5,
             ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(4.0),
-              ),
+            text: Text(
+              'Login with Google',
+              style: TextStyle(color: Colors.black, fontSize: 15.0),
             ),
+            color: Colors.white,
+            radius: 4.0,
+            onPressed: () {},
           ),
           SizedBox(
             height: 10.0,

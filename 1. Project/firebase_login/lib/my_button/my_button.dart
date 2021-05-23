@@ -1,17 +1,13 @@
-
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
-
-  MyButton({this.image, this.text, this.color, this.radius, this.onPressed})
+  MyButton({this.image, this.text, this.color, this.radius, this.onPressed});
 
   final Widget image;
   final Widget text;
   final Color color;
   final double radius;
   final VoidCallback onPressed;
-
-  const MyButton({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +21,7 @@ class MyButton extends StatelessWidget {
             text,
             Opacity(
               opacity: 0.0,
-              child: Image.asset('images/glogo.png'),
+              child: image,
             ),
           ],
         ),

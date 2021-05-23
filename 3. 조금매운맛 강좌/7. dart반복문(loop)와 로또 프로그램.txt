@@ -1,0 +1,35 @@
+1. For loop 구조
+  for(int i=0; i < 6; i+=3) {
+     print('$i번째 실행');
+ }
+
+2. For in loop 구조
+  List<String> rainbow = ['빨,주,노,초,파,남,보'];
+  for(String x in rainbow) {
+    print(x);
+}
+
+3. forEach loop 구조  -- 일반적으로 2번보다 실행속도가 빠르다
+  List<String> carMaker = ['BMW, Benz, Audi, Jaguar'];
+  carMaker.forEach((name) {
+     print(name);
+  });
+
+4. for loop, for in loop / 로또 프로그램
+
+5. Set, while loop / 로또 프로그램
+  1. List 대신 Set을 사용하면 중복이 방지됨
+     final Set<int> lottoSet = {};
+     while(lottoSet.length != 6) {
+	num = randor.nextInt(45) + 1			
+           lottoSet.add(num);
+     }
+
+6. List.generate / 로또 프로그램
+  1) List<int>.generate(10, (i) => i+1); // 1 ~ 10까지 생성
+
+  ※ cascade notation
+     .. 으로 사용
+    
+
+※ D:\Flutter\1. Project\lottory_app 앱 참조
