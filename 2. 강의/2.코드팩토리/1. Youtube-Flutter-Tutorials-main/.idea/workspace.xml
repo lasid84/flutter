@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="94737c08-c9a6-4256-a933-2e1bc184a8dd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../1. Project/weather_app/lib/model/model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../0. dart기본구조.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../1. Project/weather_app/lib/data/network.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../../1. Project/weather_app/lib/data/network.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../1. Project/weather_app/lib/screens/loading.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../../1. Project/weather_app/lib/screens/loading.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../1. Project/weather_app/lib/screens/weather_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../../1. Project/weather_app/lib/screens/weather_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../1. Project/weather_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../1. Project/weather_app/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../1. Project/weather_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../1. Project/weather_app/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../1. SDK설치와 환경변수 설정.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../10. 스낵바(snack bar)와 BuildContext.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../11. 빌더(Builder widget)위젯 없이 스낵바 만들기와 토스트 메세지 구현하기.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../12. 조금 매운맛 강좌대비  컨테이너 위젯 되짚어 보기.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../13. 조금 매운맛 강좌대비 컬럼 위젯과 로우 위젯 되짚어 보기.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../14. 조금 매운맛 강좌대비 Navigator(네비게이터) 이해하기.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../15. 조금 매운맛 강좌대비 콜렉션(collection)과 제네릭(generic).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../2. 안드로이드 스튜디오, 비주얼 스튜디오 코드, 에뮬레이터 설치.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../3. 조금매운맛 강좌/1. stateful widget part1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../3. 조금매운맛 강좌/2. 로그인과 주사위 게임 플러터앱 만들기.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../3. 조금매운맛 강좌/3. final과 const변수 완벽하게 이해하기.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../3. 조금매운맛 강좌/4. 로그인페이지-코드 리팩토링(refactoring).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../3. 조금매운맛 강좌/5. Future, async, await 이해하기.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../3. 조금매운맛 강좌/6. AndroidX 마이그레이션(migration).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../3. 조금매운맛 강좌/7. dart반복문(loop)와 로또 프로그램.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../3. 조금매운맛 강좌/8. Future-async 심화학습.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../3. 조금매운맛 강좌/9. 날씨 앱 만들기.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../3. 플러터 닥터 설정 및 프로젝트 생성하고 에뮬레이터에서 실행해 보기.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../4. 플러터에서 제일 중요하다는 위젯이란 무엇일까요.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../5. 프로젝트 폴더와 기본 코드 이해하기1~3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6. 캐릭터 페이지 디자인 1~3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../7. 플러터 다트 핵심정리-클래스와 위젯의 정체1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../8. 앱바 메뉴 아이콘 추가하기, Drawer 메뉴 만들기.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../9. 아리송한 BuildContext 이해하기.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1t4WPEBsdGgUSEXNpwDbFfWxrUw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94737c08-c9a6-4256-a933-2e1bc184a8dd" name="Default Changelist" comment="" />
+      <created>1622028815332</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622028815332</updated>
+    </task>
+    <servers />
+  </component>
+</project>

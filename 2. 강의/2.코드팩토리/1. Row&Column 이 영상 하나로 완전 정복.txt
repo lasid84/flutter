@@ -1,0 +1,2 @@
+1. MainAxis : 주축
+2. CrossAxis : 반대축

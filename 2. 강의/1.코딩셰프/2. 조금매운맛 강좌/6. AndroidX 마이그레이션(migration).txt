@@ -1,0 +1,12 @@
+1. migration
+  - 운영환경 a -> 운영환경 b
+
+2. 방법
+  1) android 폴더에 gradle.properties 열기
+  2) android.useAndroidX=true
+     android.enableJetifier=true   추가
+  3) android 폴더에 build.gradle 열기
+  4) 코틀린일 경우 코틀린 최신버전으로 변경(1.3.50)
+  5) file - open - android 폴더 선택(new window)
+  6) update 시작
+  7) refactor - Migrate to AndroidX 실행

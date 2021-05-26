@@ -1,0 +1,66 @@
+1. Thread
+  - 프로세스내에서 실행되는 흐름의 단위
+  - Dart는 싱글 스레드로 운영되는 언어
+
+2. Event loop
+  1) First In Fist Out 방식으로 "MicroTask와 Event" 준비
+  2) main함수 실행
+  3) Event loop 실행
+
+
+3. Future
+  1) 다트에 의해서 future 객체가 내부적인 배열에 등록
+  2) future관련해서 실행되어야 하는 코드들이 이벤트 큐에 등록
+  3) 불완전한 future객체가 반환
+  4) Synchronous 방식으로 실행되어야 할 코드 먼저 실행 ★
+  5) 최종적으로 실제적인 data값이 future 객체로 전달
+
+void main() {
+  print('1');
+  
+  Future((){
+    print('2');
+  }).then((_){
+    print('3');
+  });
+  print('4');
+}
+
+4. Async method
+  1) 메서드를 통해서 나오는 결과물은 future
+  2) Await 키워드를 만날때까지 synchronous 방식으로 코드 처리
+  3) Await 키워드를 만나면 future가 완료될 때까지 대기
+  4) future가 완료 되자마자 그 다음 코드들을 실행
+
+void main() async{
+  methodA();
+  await methodB();
+  await methodC('main');
+  methodD();
+  }
+
+methodA() {
+  print('1');
+}
+
+methodB() async {
+  print('3');
+  await methodC('4');
+  print('5');
+}
+
+methodC(String from) async {
+  print('6 $from');
+  
+  Future(() {
+    print('7 $from');
+  }).then((_) {
+    print('8 $from');  
+  });
+  
+  print('9 $from');
+}
+
+methodD() {
+  print('10');
+}

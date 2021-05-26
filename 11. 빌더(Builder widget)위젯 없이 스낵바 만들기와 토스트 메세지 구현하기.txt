@@ -1,5 +1,0 @@
-D:\Flutter\1. Project\snackbar_withoutbuilder 앱 참조
-
-   1. fluttertoast import시 null 오류 발생시 터미널에서 아래 실행
-      (Error : Cannot run with sound null safety, because the following dependencies)
-      - flutter run --no-sound-null-safety

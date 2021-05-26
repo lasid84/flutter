@@ -1,0 +1,11 @@
+1. Future<type> 
+  - async 방식 구현 방법
+  - 비동기 작업을 할때 사용
+  - 일정 소요시간 후에 실제 데이터나 에러를 반환
+  - async 클래스는 await 메서드를 가지고 잇음
+    ↘ await로 선언된 메서드는 응답이 처리될 때까지 대기
+
+
+
+※ D:\Flutter\1. Project\firebase_login 앱의 test폴더 참조
+※ D:\Flutter\1. Project\future_json 참조

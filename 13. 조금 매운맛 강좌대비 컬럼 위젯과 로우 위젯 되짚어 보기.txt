@@ -1,3 +1,0 @@
-1. 거의 100% 사용되는 위젯!!
-2. https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e     - layout 학습 사이트
-3. D:\Flutter\1. Project\column_row 앱 참조

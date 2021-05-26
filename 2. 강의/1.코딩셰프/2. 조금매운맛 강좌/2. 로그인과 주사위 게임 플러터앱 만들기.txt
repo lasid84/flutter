@@ -1,0 +1,5 @@
+1. focus
+  1) focustnode : 포커스를 받는 특정 위젯을 식별
+  2) focusscope : 어떤 위젯들까지 포커스를 받는지 범위를 나타냄
+
+※ D:\Flutter\1. Project\increasecount 앱 참조

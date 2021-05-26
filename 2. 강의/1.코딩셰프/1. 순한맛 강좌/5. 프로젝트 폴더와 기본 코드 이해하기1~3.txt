@@ -1,0 +1,8 @@
+1. Flutter 프로젝트 폴더 구성
+  1) 프로젝트 생성 방법
+     ㄱ. View - Command pallete - Flutter : New Application project 선택
+     ㄴ. first 프로젝트 생성 참조(D:\FLUTTER\1. Project\first)
+
+2. 코드의 기본 내용 이해하기 / 앱 페이지 기본 구성 공식화 해보기
+
+3. 첫 번째 Flutter앱 만들기
