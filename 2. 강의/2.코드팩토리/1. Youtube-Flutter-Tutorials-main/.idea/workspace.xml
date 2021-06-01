@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94737c08-c9a6-4256-a933-2e1bc184a8dd" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
@@ -9,6 +10,10 @@
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/last_build_run.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/last_build_run.json" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+>>>>>>> 956766f1ead8b16df17741b708e14919c3067b01
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +59,7 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="100" y="100" width="1241" height="847" key="AVDManager" timestamp="1622523756070">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -86,5 +92,27 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="383" y="230" width="672" height="678" key="search.everywhere.popup/-1680.34.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1622523928819" />
+=======
+    <state x="2294" y="291" key="FileChooserDialogImpl" timestamp="1622114752696">
+      <screen x="1920" y="31" width="1680" height="1010" />
+    </state>
+    <state x="2294" y="291" key="FileChooserDialogImpl/1920.31.1680.1010/0.0.1920.1040@1920.31.1680.1010" timestamp="1622114752696" />
+    <state width="1129" height="269" key="GridCell.Tab.0.bottom" timestamp="1622032098818">
+      <screen x="1920" y="31" width="1680" height="1010" />
+    </state>
+    <state width="1129" height="269" key="GridCell.Tab.0.bottom/1920.31.1680.1010/0.0.1920.1040@1920.31.1680.1010" timestamp="1622032098818" />
+    <state width="1129" height="269" key="GridCell.Tab.0.center" timestamp="1622032098818">
+      <screen x="1920" y="31" width="1680" height="1010" />
+    </state>
+    <state width="1129" height="269" key="GridCell.Tab.0.center/1920.31.1680.1010/0.0.1920.1040@1920.31.1680.1010" timestamp="1622032098818" />
+    <state width="1129" height="269" key="GridCell.Tab.0.left" timestamp="1622032098818">
+      <screen x="1920" y="31" width="1680" height="1010" />
+    </state>
+    <state width="1129" height="269" key="GridCell.Tab.0.left/1920.31.1680.1010/0.0.1920.1040@1920.31.1680.1010" timestamp="1622032098818" />
+    <state width="1129" height="269" key="GridCell.Tab.0.right" timestamp="1622032098818">
+      <screen x="1920" y="31" width="1680" height="1010" />
+    </state>
+    <state width="1129" height="269" key="GridCell.Tab.0.right/1920.31.1680.1010/0.0.1920.1040@1920.31.1680.1010" timestamp="1622032098818" />
+>>>>>>> 956766f1ead8b16df17741b708e14919c3067b01
   </component>
 </project>

@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 import 'package:get/get.dart';
 
 void main() {
+
   runApp(
     MultiProvider(
       providers: [
