@@ -1,0 +1,4 @@
+1. Container widget
+  1) margin : 위젯의 바깟쪽 여백 설정
+  2) padding : 위젯의 안쪽 여백 설정
+  3) 컨테이너 위젯은 오직 한개의 child만 가질 수 있다

@@ -1,0 +1,26 @@
+1. Widget lifecycle
+  1) statful widget
+     - initState method
+     - build method
+     - dispose method, deactivate method
+
+2. API
+  1) Application Programming Interface
+     - 응용프로그램에서 사용할 수 있도록 운영체제나 프로그래밍 언어가
+       제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다.
+  2) 일련의 표준화된 명령어나 기능
+  3) 매개 역할자로써의 API
+
+3. Exception handling
+  - try ~ catch
+
+4. HTtp package
+  - https://pub.dev/packages/http/install
+  - import '~~' as http 를 붙이면 가독성이 좋아짐
+  - 
+
+5. Jason parsing
+  - JavaScript Object Notation 의 약자
+  - key값과 value를 맵핑시켜 사용
+
+6. Passing data

@@ -1,0 +1,29 @@
+1. Linter - 해도되고 안해도 됨
+  - 빠른 개발을 위한 하나의 방법
+  - 개발문화를 만들어감에 있어 도움이 됨
+
+2. 참조문서
+  - https://dart-lang.github.io/linter/lints/
+
+3. 참조문서는 너무 방대하여 구글이 사용하고 있는 linting rule 참조(51개 rule)
+  - https://pub.dev/packages/pedantic
+
+4. 프로젝트 세팅
+  - analysis_options.yaml 생성
+  - 두칸씩 인덴트 꼭 지켜야함
+     analyzer:
+       errors:
+         avoid_print: error    //info, warning, error, ignore 중 하나 지정, 
+     linter:
+       rules:
+         - avoid_print
+
+ 위처럼 추가하고 싶은 것만 추가해도 되지만 구글에서 만든 package 사용
+
+   1) pubspec.yaml 의 dependencies에 pedantic: ^1.11.0 추가
+       - 개발단계에서만 확인하면 되므로 
+          dev_dependencies:
+	  pedantic: ^1.11.0
+   2) analysis_options.yaml 에 include: package:pedantic/analysis_options.yaml 추가
+
+
