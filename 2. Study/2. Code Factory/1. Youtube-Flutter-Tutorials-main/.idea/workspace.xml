@@ -2,13 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94737c08-c9a6-4256-a933-2e1bc184a8dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../2. 강의/2.코드팩토리/1. Youtube-Flutter-Tutorials-main/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. 강의/2.코드팩토리/1. Youtube-Flutter-Tutorials-main/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. 강의/2.코드팩토리/1. Youtube-Flutter-Tutorials-main/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. 강의/2.코드팩토리/1. Youtube-Flutter-Tutorials-main/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. 강의/2.코드팩토리/1. Youtube-Flutter-Tutorials-main/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. 강의/2.코드팩토리/1. Youtube-Flutter-Tutorials-main/.dart_tool/version" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. 강의/2.코드팩토리/1. Youtube-Flutter-Tutorials-main/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. 강의/2.코드팩토리/1. Youtube-Flutter-Tutorials-main/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. 강의/2.코드팩토리/1. Youtube-Flutter-Tutorials-main/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. 강의/2.코드팩토리/1. Youtube-Flutter-Tutorials-main/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. 강의/2.코드팩토리/1. Youtube-Flutter-Tutorials-main/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../2. 강의/2.코드팩토리/1. Youtube-Flutter-Tutorials-main/build/last_build_run.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../2. 강의/2.코드팩토리/1. Youtube-Flutter-Tutorials-main/build/last_build_run.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/.metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/app/src/main/kotlin/com/example/flutter_provider_sample/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/app/src/profile/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Flutter/Debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Flutter/Release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/AppDelegate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Base.lproj/Main.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/ios/Runner/Runner-Bridging-Header.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/lib/main.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/lib/src/component/count_view.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/lib/src/model/movie.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/lib/src/provider/bottom_navigation_provider.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/lib/src/provider/counter_provider.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/lib/src/provider/movie_provider.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/lib/src/repository/movie_repository.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/lib/src/ui/count_page.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/lib/src/ui/home.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/lib/src/ui/movie_list.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/pubspec.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/pubspec.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../3. Develop man/2.영화앱(provider 사용)/test/widget_test.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +95,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../3. Develop man/3. animationbyGetXfeat-HERO" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -62,22 +127,32 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="535" y="265" key="AndroidProcessChooserDialog/-1680.34.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1622537599063" />
-    <state width="1381" height="279" key="GridCell.Tab.0.bottom" timestamp="1622526045528">
+    <state x="709" y="268" key="FileChooserDialogImpl" timestamp="1622607965985">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1060" y="294" key="FileChooserDialogImpl/-1680.34.1680.1010/0.0.1920.1040@-1680.34.1680.1010" timestamp="1622588975504" />
+    <state x="709" y="268" key="FileChooserDialogImpl/-1680.34.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1622607965985" />
+    <state x="709" y="268" key="FileChooserDialogImpl/0.0.1920.1040/-1680.34.1680.1010@0.0.1920.1040" timestamp="1622596118764" />
+    <state width="1877" height="227" key="GridCell.Tab.0.bottom" timestamp="1622600949846">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1381" height="279" key="GridCell.Tab.0.bottom/-1680.34.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1622526045528" />
-    <state width="1381" height="279" key="GridCell.Tab.0.center" timestamp="1622526045528">
+    <state width="1877" height="227" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1680.34.1680.1010@0.0.1920.1040" timestamp="1622600949846" />
+    <state width="1877" height="227" key="GridCell.Tab.0.center" timestamp="1622600949846">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1381" height="279" key="GridCell.Tab.0.center/-1680.34.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1622526045528" />
-    <state width="1381" height="279" key="GridCell.Tab.0.left" timestamp="1622526045527">
+    <state width="1877" height="227" key="GridCell.Tab.0.center/0.0.1920.1040/-1680.34.1680.1010@0.0.1920.1040" timestamp="1622600949846" />
+    <state width="1877" height="227" key="GridCell.Tab.0.left" timestamp="1622600949846">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1381" height="279" key="GridCell.Tab.0.left/-1680.34.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1622526045527" />
-    <state width="1381" height="279" key="GridCell.Tab.0.right" timestamp="1622526045528">
+    <state width="1877" height="227" key="GridCell.Tab.0.left/0.0.1920.1040/-1680.34.1680.1010@0.0.1920.1040" timestamp="1622600949846" />
+    <state width="1877" height="227" key="GridCell.Tab.0.right" timestamp="1622600949846">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1381" height="279" key="GridCell.Tab.0.right/-1680.34.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1622526045528" />
+    <state width="1877" height="227" key="GridCell.Tab.0.right/0.0.1920.1040/-1680.34.1680.1010@0.0.1920.1040" timestamp="1622600949846" />
     <state x="221" y="168" key="SettingsEditor" timestamp="1622523481656">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
