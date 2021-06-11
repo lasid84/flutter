@@ -1,5 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_snslogin/src/pages/home.dart';
+import 'package:firebase_snslogin/src/pages/Home/home.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
