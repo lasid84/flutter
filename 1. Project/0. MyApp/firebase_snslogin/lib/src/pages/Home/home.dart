@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_snslogin/src/pages/Board/boardPage.dart';
 import 'package:firebase_snslogin/src/pages/Login/login.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +27,7 @@ class Home extends StatelessWidget {
           if (!snapshot.hasData) {
             return const LoginWidget();
           } else {
+            print('test-1');
             return Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -70,7 +72,10 @@ class Home extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => BoardPage()));
+                      },
                       child: Text(
                         'Vs.Computer(Rock Paper Scissors)',
                         style: TextStyle(color: Colors.white, fontSize: 15.0),

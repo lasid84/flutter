@@ -1,0 +1,6 @@
+1. Sliver
+  1) SliverGrid	
+  2) SliverList
+  3) SliverAppBar
+     - AppBar를 구성할 수 있고 스크롤시 사라지게 혹은 고정되게, 일부 고정 최대크기 늘리게
+       위로 스크롤하면 없어지고 아래로 스크롤하면 생기게, 비율로 생기게, 먼저 생기게 할 수 있다
