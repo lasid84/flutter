@@ -1,6 +1,7 @@
 import 'package:codefactory_youtube_flutter_tutorial/Layouts/index.dart';
 import 'package:codefactory_youtube_flutter_tutorial/Models/index.dart';
 import 'package:codefactory_youtube_flutter_tutorial/Screens/CardFlip/CardFlipScreen.dart';
+import 'package:codefactory_youtube_flutter_tutorial/Screens/CardFlip/CardFlipScreen2.dart';
 import 'package:codefactory_youtube_flutter_tutorial/Screens/CustomKeyboard/CustomKeyboard.dart';
 import 'package:codefactory_youtube_flutter_tutorial/Screens/CustomPaintHermesAppleWatch/CustomPaintHermesAppleWatch.dart';
 import 'package:codefactory_youtube_flutter_tutorial/Screens/CustomScrollView/CustomScrollViewScreen.dart';
@@ -59,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         ListViewItem(
           name: 'Card Flip',
-          page: CardFlipScreen(),
+          page: CardFlipScreen2(),
         ),
       ],
     );

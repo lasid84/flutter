@@ -39,7 +39,7 @@ class _CardFlipScreenState extends State<CardFlipScreen> {
     bool isThree = true,
   }) {
     return renderCard(
-      key: ValueKey(isThree ? 3 : 2),
+      key: ValueKey(isThree ? 3 : 8),
       isBack: false,
       isThree: isThree,
     );
@@ -48,7 +48,7 @@ class _CardFlipScreenState extends State<CardFlipScreen> {
   renderBack() {
     return renderCard(
       key: ValueKey(false),
-      isBack: true,
+      // isBack: true,
     );
   }
 
@@ -101,13 +101,13 @@ class _CardFlipScreenState extends State<CardFlipScreen> {
                 });
               },
               child: AnimatedSwitcher(
-                transitionBuilder: wrapAnimatedBuilder,
-                layoutBuilder: (widget, list) {
-                  return Stack(
-                    children: [widget, ...list],
-                  );
-                },
-                duration: Duration(milliseconds: 1000),
+                //transitionBuilder: wrapAnimatedBuilder,
+                // layoutBuilder: (widget, list) {
+                //   return Stack(
+                //     children: [widget, ...list],
+                //   );
+                // },
+                duration: Duration(seconds: 5),
                 child: showFront ? renderFront() : renderBack(),
               ),
             ),
