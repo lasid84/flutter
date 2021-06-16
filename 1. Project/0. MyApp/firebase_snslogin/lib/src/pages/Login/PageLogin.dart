@@ -1,31 +1,34 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_snslogin/src/myButton/googleLoginBtn.dart';
+import 'package:firebase_snslogin/src/pages/Login/ProviderFirebaseAuth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:provider/provider.dart';
 
-class LoginWidget extends StatelessWidget {
-  const LoginWidget({Key? key}) : super(key: key);
+class PageLogin extends StatelessWidget {
+  // Future<UserCredential> signInWithGoogle() async {
+  //   // Trigger the authentication flow
+  //   final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-  Future<UserCredential> signInWithGoogle() async {
-    // Trigger the authentication flow
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+  //   // Obtain the auth details from the request
+  //   final GoogleSignInAuthentication googleAuth =
+  //       await googleUser!.authentication;
 
-    // Obtain the auth details from the request
-    final GoogleSignInAuthentication googleAuth =
-        await googleUser!.authentication;
+  //   // Create a new credential
+  //   final credential = GoogleAuthProvider.credential(
+  //     accessToken: googleAuth.accessToken,
+  //     idToken: googleAuth.idToken,
+  //   );
 
-    // Create a new credential
-    final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
-    );
+  //   // Once signed in, return the UserCredential
+  //   return await FirebaseAuth.instance.signInWithCredential(credential);
+  // }
 
-    // Once signed in, return the UserCredential
-    return await FirebaseAuth.instance.signInWithCredential(credential);
-  }
+  late final ProviderFirebaseAuth _auth;
 
   @override
   Widget build(BuildContext context) {
+    _auth = Provider.of<ProviderFirebaseAuth>(context, listen:false);
     return Scaffold(
       // appBar: AppBar(
       //   // title: const Text('Login'),
@@ -73,7 +76,7 @@ class LoginWidget extends StatelessWidget {
                   ),
                 ),
                 radius: 4.0,
-                onPressed: signInWithGoogle,
+                onPressed: _auth.signInWithGoogle,
               ),
             ),
           ],
