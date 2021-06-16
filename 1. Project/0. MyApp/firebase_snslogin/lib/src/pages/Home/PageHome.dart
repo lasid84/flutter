@@ -5,24 +5,79 @@ import 'package:firebase_snslogin/src/pages/Login/ProviderFirebaseAuth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class PageHome extends StatelessWidget {
+class PageHome extends StatefulWidget {
   const PageHome({Key? key}) : super(key: key);
 
   @override
+  _PageHomeState createState() => _PageHomeState();
+}
+
+class _PageHomeState extends State<PageHome> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text("Rock Paper Scissor(RPS)"),
-          backgroundColor: Colors.amber[700],
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.menu),
-              onPressed: () {
-              },
-            ),
-          ],
-        ),
-        body: PageMain());
+    return WillPopScope(
+      onWillPop: () async {
+        // FirebaseAuth.instance.signOut();
+        // return true;
+        return _onBackPressed();
+      },
+      child: Scaffold(
+          appBar: AppBar(
+            title: const Text("Rock Paper Scissor(RPS)"),
+            backgroundColor: Colors.amber[700],
+            actions: [
+              // IconButton(
+              //   icon: const Icon(Icons.menu),
+              //   onPressed: () {},
+              // ),
+              PopupMenuButton(
+                  child: Icon(Icons.menu),
+                  onSelected: menuAction,
+                  itemBuilder: (BuildContext itemBuilder) => {'Sign Out'}
+                      .map((value) => PopupMenuItem(
+                            child: Text(value),
+                            value: value,
+                          ))
+                      .toList())
+            ],
+          ),
+          body: PageMain()),
+    );
+  }
+
+  Future<bool> _onBackPressed() async {
+    return await showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text('Do you want to sign out?'),
+            actions: [
+              FlatButton(
+                onPressed: () {
+                  Navigator.of(context).pop(false);
+                },
+                child: Text('No'),
+              ),
+              FlatButton(
+                onPressed: () {
+                  Navigator.of(context).pop(false);
+                  FirebaseAuth.instance.signOut();
+                },
+                child: Text('Yes'),
+              ),
+            ],
+          ),
+        ) ??
+        false;
+  }
+}
+
+void menuAction(String value) {
+  switch (value) {
+    case 'Opt 1':
+      break;
+    case 'Sign Out':
+      FirebaseAuth.instance.signOut();
+      break;
   }
 }
 
@@ -55,9 +110,7 @@ Widget PageMain() {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
                 child: TextButton(
-                  onPressed: () {
-                    FirebaseAuth.instance.signOut();
-                  },
+                  onPressed: () {},
                   child: Text(
                     'Vs.Player(Rock Paper Scissors)',
                     style: TextStyle(color: Colors.white, fontSize: 15.0),
@@ -85,12 +138,26 @@ Widget PageMain() {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
                 child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Vs.Computer(Rock Paper Scissors)',
+                    style: TextStyle(color: Colors.white, fontSize: 15.0),
+                  ),
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.grey),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
+                child: TextButton(
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (_) => PageBoard()));
                   },
                   child: Text(
-                    'Vs.Computer(Rock Paper Scissors)',
+                    'Board',
                     style: TextStyle(color: Colors.white, fontSize: 15.0),
                   ),
                   style: ButtonStyle(
