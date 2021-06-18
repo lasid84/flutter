@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_snslogin/src/pages/Board/PageBoard.dart';
 import 'package:firebase_snslogin/src/pages/Login/PageLogin.dart';
@@ -15,59 +17,28 @@ class PageHome extends StatefulWidget {
 class _PageHomeState extends State<PageHome> {
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
-        // FirebaseAuth.instance.signOut();
-        // return true;
-        return _onBackPressed();
-      },
-      child: Scaffold(
-          appBar: AppBar(
-            title: const Text("Rock Paper Scissor(RPS)"),
-            backgroundColor: Colors.amber[700],
-            actions: [
-              // IconButton(
-              //   icon: const Icon(Icons.menu),
-              //   onPressed: () {},
-              // ),
-              PopupMenuButton(
-                  child: Icon(Icons.menu),
-                  onSelected: menuAction,
-                  itemBuilder: (BuildContext itemBuilder) => {'Sign Out'}
-                      .map((value) => PopupMenuItem(
-                            child: Text(value),
-                            value: value,
-                          ))
-                      .toList())
-            ],
-          ),
-          body: PageMain()),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Rock Paper Scissor(RPS)"),
+        backgroundColor: Colors.amber[700],
+        actions: [
+          // IconButton(
+          //   icon: const Icon(Icons.menu),
+          //   onPressed: () {},
+          // ),
+          PopupMenuButton(
+              child: Icon(Icons.menu),
+              onSelected: menuAction,
+              itemBuilder: (BuildContext itemBuilder) => {'Sign Out'}
+                  .map((value) => PopupMenuItem(
+                        child: Text(value),
+                        value: value,
+                      ))
+                  .toList())
+        ],
+      ),
+      body: PageMain(),
     );
-  }
-
-  Future<bool> _onBackPressed() async {
-    return await showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: Text('Do you want to sign out?'),
-            actions: [
-              FlatButton(
-                onPressed: () {
-                  Navigator.of(context).pop(false);
-                },
-                child: Text('No'),
-              ),
-              FlatButton(
-                onPressed: () {
-                  Navigator.of(context).pop(false);
-                  FirebaseAuth.instance.signOut();
-                },
-                child: Text('Yes'),
-              ),
-            ],
-          ),
-        ) ??
-        false;
   }
 }
 
@@ -94,82 +65,149 @@ Widget PageMain() {
           child: PageLogin(),
         );
       } else {
-        return Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              SizedBox(
-                height: 300,
-                width: 400,
-                child: Image.asset('assets/images/mainimage.png'),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Vs.Player(Rock Paper Scissors)',
-                    style: TextStyle(color: Colors.white, fontSize: 15.0),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.grey),
+        return WillPopScope(
+          //이건 물어보고 종료하는 법
+          onWillPop: () async => await showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: Text('Do you want to sign out? '),
+              actions: [
+                RaisedButton(
+                    child: Text('Yes'),
+                    onPressed: () => {
+                          Navigator.of(context).pop(false),
+                          FirebaseAuth.instance.signOut(),
+                        }),
+                RaisedButton(
+                  child: Text('No'),
+                  onPressed: () => Navigator.of(context).pop(false),
+                ),
+              ],
+            ),
+          ),
+          //뒤로가기 누르면 스낵바 띄우고 1초안에 한번더 뒤로가기누름 종료
+          //기능 안됨, 더 연구중
+          // late DateTime? _lastQuitTime;
+          // return WillPopScope(
+          //   onWillPop: () async {
+          //     if (_lastQuitTime == null) {
+          //       Scaffold.of(context).showSnackBar(
+          //           SnackBar(content: Text('press back button again ')));
+          //       _lastQuitTime = DateTime.now();
+          //       return false;
+          //     } else if (_lastQuitTime != null &&
+          //         DateTime.now().difference(_lastQuitTime!).inSeconds > 1) {
+          //       Scaffold.of(context).showSnackBar(
+          //           SnackBar(content: Text('press back button again ')));
+          //       _lastQuitTime = DateTime.now();
+          //       return false;
+          //     } else {
+          //       Navigator.of(context).pop(true);
+          //       return true;
+          //     }
+          //   },
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(
+                  height: 300,
+                  width: 400,
+                  child: Image.asset('assets/images/mainimage.png'),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Vs.Player(Rock Paper Scissors)',
+                      style: TextStyle(color: Colors.white, fontSize: 15.0),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.grey),
+                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Vs.Player(Remove one(RPS)',
-                    style: TextStyle(color: Colors.white, fontSize: 15.0),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.grey),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Vs.Computer(Rock Paper Scissors)',
-                    style: TextStyle(color: Colors.white, fontSize: 15.0),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.grey),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Vs.Player(Remove one(RPS)',
+                      style: TextStyle(color: Colors.white, fontSize: 15.0),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.grey),
+                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => PageBoard()));
-                  },
-                  child: Text(
-                    'Board',
-                    style: TextStyle(color: Colors.white, fontSize: 15.0),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.grey),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Vs.Computer(Rock Paper Scissors)',
+                      style: TextStyle(color: Colors.white, fontSize: 15.0),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.grey),
+                    ),
                   ),
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => PageBoard()));
+                    },
+                    child: Text(
+                      'Board',
+                      style: TextStyle(color: Colors.white, fontSize: 15.0),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.grey),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         );
       }
     },
   );
 }
+
+// Future<bool> _onBackPressed() async {
+//     return await showDialog(
+//           context: context,
+//           builder: (context) => AlertDialog(
+//             title: Text('Do you want to sign out?'),
+//             actions: [
+//               FlatButton(
+//                 onPressed: () {
+//                   Navigator.of(context).pop(false);
+//                 },
+//                 child: Text('No'),
+//               ),
+//               FlatButton(
+//                 onPressed: () {
+//                   Navigator.of(context).pop(false);
+//                   FirebaseAuth.instance.signOut();
+//                 },
+//                 child: Text('Yes'),
+//               ),
+//             ],
+//           ),
+//         ) ??
+//         false;
+//   }
