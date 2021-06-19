@@ -12,3 +12,5 @@
 2. Visual Studio Code로 프로젝트 생성 / 에뮬레이터 실행
 
 3. Android studio로 프로젝트 생성 / 에뮬레이터 실행
+  - flutter doctor시 안드로이드스튜디오 설치 인식 못할때
+    flutter config --android-studio-dir="C:\Program Files\Android\Android Studio"

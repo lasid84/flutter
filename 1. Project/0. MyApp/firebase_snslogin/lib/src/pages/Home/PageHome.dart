@@ -112,9 +112,9 @@ Widget PageMain() {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 SizedBox(
-                  height: 300,
-                  width: 400,
-                  child: Image.asset('assets/images/mainimage.png'),
+                  height: MediaQuery.of(context).size.height / 2 - 30,
+                  width: MediaQuery.of(context).size.width,
+                  child: Image.asset('assets/images/RPS_MAIN.png'),
                 ),
                 SizedBox(
                   height: 10,
@@ -186,28 +186,3 @@ Widget PageMain() {
     },
   );
 }
-
-// Future<bool> _onBackPressed() async {
-//     return await showDialog(
-//           context: context,
-//           builder: (context) => AlertDialog(
-//             title: Text('Do you want to sign out?'),
-//             actions: [
-//               FlatButton(
-//                 onPressed: () {
-//                   Navigator.of(context).pop(false);
-//                 },
-//                 child: Text('No'),
-//               ),
-//               FlatButton(
-//                 onPressed: () {
-//                   Navigator.of(context).pop(false);
-//                   FirebaseAuth.instance.signOut();
-//                 },
-//                 child: Text('Yes'),
-//               ),
-//             ],
-//           ),
-//         ) ??
-//         false;
-//   }
