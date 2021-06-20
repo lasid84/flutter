@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_snslogin/src/Common/Common.dart';
 import 'package:firebase_snslogin/src/pages/Board/ModelBoard.dart';
 import 'package:firebase_snslogin/src/pages/Board/DocFirebase.dart';
 import 'package:firebase_snslogin/src/pages/Board/PageWriteBoard.dart';
@@ -31,7 +32,7 @@ class _PageBoardState extends State<PageBoard> {
         stream: boardData.snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
-            return Text('Something went wrong');
+            return Text(snapshot.hasError.toString());
           }
 
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -42,6 +43,8 @@ class _PageBoardState extends State<PageBoard> {
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
               Map<String, dynamic> data =
                   document.data() as Map<String, dynamic>;
+
+              Board board = Board.fromJson(data);
 
               return SafeArea(
                 child: Card(
@@ -81,7 +84,7 @@ class _PageBoardState extends State<PageBoard> {
                                 ],
                               ),
                               Text(
-                                getDateFormat(data['createdate'])!,
+                                Common.getDateFormat(data['createdate']),
                               ),
                             ]),
                       ],
@@ -90,7 +93,7 @@ class _PageBoardState extends State<PageBoard> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => PageWriteBoard(board),
+                          builder: (context) => PageWriteBoard(board: board),
                         ),
                       );
                     },
@@ -102,16 +105,5 @@ class _PageBoardState extends State<PageBoard> {
         },
       ),
     );
-  }
-}
-
-String? getDateFormat(String? date) {
-  if (date == null) {
-    return '-';
-  } else {
-    String dateWithT = date.substring(0, 8) + 'T' + date.substring(8);
-    DateTime dateTime = DateTime.parse(dateWithT);
-    final f = new DateFormat('yyyy-MM-dd hh:mm');
-    return f.format(dateTime);
   }
 }
