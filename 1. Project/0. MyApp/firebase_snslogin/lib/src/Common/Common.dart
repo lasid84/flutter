@@ -11,4 +11,8 @@ class Common {
       return f.format(dateTime);
     }
   }
+
+  static late var nickName;
+  static late var name;
+  static late var email;
 }

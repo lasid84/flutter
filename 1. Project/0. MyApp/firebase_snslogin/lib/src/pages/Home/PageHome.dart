@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_snslogin/src/Common/Common.dart';
 import 'package:firebase_snslogin/src/pages/Board/PageBoard.dart';
 import 'package:firebase_snslogin/src/pages/Login/PageLogin.dart';
 import 'package:firebase_snslogin/src/pages/Login/ProviderFirebaseAuth.dart';
@@ -65,6 +66,9 @@ Widget PageMain() {
           child: PageLogin(),
         );
       } else {
+        Common.nickName = snapshot.data!.displayName.toString();
+        Common.name = snapshot.data!.displayName.toString();
+        Common.email = snapshot.data!.email.toString();
         return WillPopScope(
           //이건 물어보고 종료하는 법
           onWillPop: () async => await showDialog(
