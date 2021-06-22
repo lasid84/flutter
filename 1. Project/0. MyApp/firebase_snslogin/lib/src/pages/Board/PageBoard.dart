@@ -104,6 +104,18 @@ class _PageBoardState extends State<PageBoard> {
           );
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => PageWriteBoard(board: null),
+              ));
+        },
+        tooltip: 'Write Board',
+        child: Icon(Icons.add),
+        backgroundColor: Colors.amber[700],
+      ), // This trailing comma
     );
   }
 }
