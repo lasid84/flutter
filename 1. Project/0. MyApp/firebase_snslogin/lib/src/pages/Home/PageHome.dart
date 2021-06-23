@@ -123,16 +123,16 @@ Widget PageMain() {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
-                  child: TextButton(
+                  child: ElevatedButton(
                     onPressed: () {},
                     child: Text(
                       'Play RPS',
-                      style: TextStyle(color: Colors.white, fontSize: 15.0),
+                      // style: TextStyle(color: Colors.white, fontSize: 15.0),
                     ),
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.grey),
-                    ),
+                    // style: ButtonStyle(
+                    //   backgroundColor:
+                    //       MaterialStateProperty.all<Color>(Colors.grey),
+                    // ),
                   ),
                 ),
                 Padding(

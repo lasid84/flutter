@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_snslogin/src/Common/Common.dart';
 import 'package:firebase_snslogin/src/pages/Board/DocFirebase.dart';
@@ -9,9 +8,9 @@ import 'package:ntp/ntp.dart';
 
 class PageWriteBoard extends StatefulWidget {
   final Board? board;
+  final String? id;
 
-  PageWriteBoard({Key? key, this.board}) : super(key: key);
-  
+  PageWriteBoard({Key? key, this.board, this.id}) : super(key: key);
 
   @override
   _PageWriteBoardState createState() => _PageWriteBoardState();
@@ -37,13 +36,13 @@ class _PageWriteBoardState extends State<PageWriteBoard> {
     teccontents = TextEditingController(
         text: widget.board?.contents == null ? '' : widget.board?.contents);
 
-    if (widget.board?.email == null) {
+    if (widget.id == null) {
       _showIcon = true;
     } else {
       _showIcon = widget.board?.email == Common.email ? true : false;
     }
 
-    if(widget.board == null) {
+    if (widget.id == null) {
       _updateFlag = false;
     } else {
       _updateFlag = true;
@@ -52,7 +51,6 @@ class _PageWriteBoardState extends State<PageWriteBoard> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Write Board'),
@@ -62,17 +60,24 @@ class _PageWriteBoardState extends State<PageWriteBoard> {
             child: IconButton(
               onPressed: () async {
                 //String date = DateFormat("yyyyMMddhhmmss").format(DateTime.now());
-                String date = DateFormat("yyyyMMddhhmmss").format(await NTP.now());
+                String date =
+                    DateFormat("yyyyMMddhhmmss").format(await NTP.now());
 
                 if (_updateFlag == false) {
-                  AddBoard(
-                      '1',
-                      Common.email,
-                      Common.name,
-                      Common.nickName,
-                      tectitle.text,
-                      teccontents.text,
-                      date).writeBoard();
+                  AddBoard('1', Common.email, Common.name, Common.nickName,
+                          tectitle.text, teccontents.text, date)
+                      .writeBoard();
+                } else {
+                  UpdateBoard(
+                          widget.id!,
+                          '1',
+                          Common.email,
+                          Common.name,
+                          Common.nickName,
+                          tectitle.text,
+                          teccontents.text,
+                          date)
+                      .updateBoard();
                 }
 
                 Navigator.of(context).pop(true);
@@ -169,7 +174,41 @@ class AddBoard {
           'contents': contents,
           'createdate': createdate,
         })
-        .then((value) => print("User Added"))
-        .catchError((error) => print("Failed to add user: $error"));
+        .then((value) => print("Board Added"))
+        .catchError((error) => print("Failed to add board: $error"));
+  }
+}
+
+class UpdateBoard {
+  final String id;
+  final String boardID;
+  final String email;
+  final String name;
+  final String? nickname;
+  final String title;
+  final String? contents;
+  final String? createdate;
+
+  UpdateBoard(this.id, this.boardID, this.email, this.name, this.nickname,
+      this.title, this.contents, this.createdate);
+
+  CollectionReference boardData =
+      FirebaseFirestore.instance.collection(DocFirebase.com_document_id);
+
+  Future<void> updateBoard() {
+    return boardData
+        .doc(id)
+        .update({
+          // 'documentID': boardData.id,
+          // 'boardID': boardID,
+          // 'email': email,
+          // 'name': name,
+          // 'nickname': nickname,
+          'title': title,
+          'contents': contents,
+          // 'createdate': createdate,
+        })
+        .then((value) => print("updated Board"))
+        .catchError((error) => print("Failed to update board: $error"));
   }
 }
