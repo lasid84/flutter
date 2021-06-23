@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_snslogin/src/Common/Common.dart';
 import 'package:firebase_snslogin/src/pages/Board/PageBoard.dart';
@@ -128,7 +126,7 @@ Widget PageMain() {
                   child: TextButton(
                     onPressed: () {},
                     child: Text(
-                      'Vs.Player(Rock Paper Scissors)',
+                      'Play RPS',
                       style: TextStyle(color: Colors.white, fontSize: 15.0),
                     ),
                     style: ButtonStyle(
@@ -142,7 +140,7 @@ Widget PageMain() {
                   child: TextButton(
                     onPressed: () {},
                     child: Text(
-                      'Vs.Player(Remove one(RPS)',
+                      'Play RPS Remove one',
                       style: TextStyle(color: Colors.white, fontSize: 15.0),
                     ),
                     style: ButtonStyle(
@@ -156,7 +154,7 @@ Widget PageMain() {
                   child: TextButton(
                     onPressed: () {},
                     child: Text(
-                      'Vs.Computer(Rock Paper Scissors)',
+                      'Infinity Challenge',
                       style: TextStyle(color: Colors.white, fontSize: 15.0),
                     ),
                     style: ButtonStyle(
@@ -167,19 +165,19 @@ Widget PageMain() {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
-                  child: TextButton(
+                  child: OutlinedButton(
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (_) => PageBoard()));
                     },
                     child: Text(
                       'Board',
-                      style: TextStyle(color: Colors.white, fontSize: 15.0),
+                      // style: TextStyle(color: Colors.white, fontSize: 15.0),
                     ),
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.grey),
-                    ),
+                    // style: ButtonStyle(
+                    //   backgroundColor:
+                    //       MaterialStateProperty.all<Color>(Colors.grey),
+                    // ),
                   ),
                 ),
               ],

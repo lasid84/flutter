@@ -1,17 +1,17 @@
+
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_snslogin/src/Common/Common.dart';
 import 'package:firebase_snslogin/src/pages/Board/DocFirebase.dart';
 import 'package:firebase_snslogin/src/pages/Board/ModelBoard.dart';
-import 'package:firebase_snslogin/src/pages/Login/ProviderFirebaseAuth.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
+import 'package:ntp/ntp.dart';
 
 class PageWriteBoard extends StatefulWidget {
   final Board? board;
 
   PageWriteBoard({Key? key, this.board}) : super(key: key);
+  
 
   @override
   _PageWriteBoardState createState() => _PageWriteBoardState();
@@ -19,41 +19,69 @@ class PageWriteBoard extends StatefulWidget {
 
 class _PageWriteBoardState extends State<PageWriteBoard> {
   late final TextEditingController tectitle;
-
   late final TextEditingController teccontents;
+  late bool _showIcon, _updateFlag;
 
   @override
   void dispose() {
+    super.dispose();
     tectitle.dispose();
     teccontents.dispose();
   }
 
   @override
-  @override
   void initState() {
+    super.initState();
     tectitle = TextEditingController(
         text: widget.board?.title == null ? '' : widget.board?.title);
     teccontents = TextEditingController(
         text: widget.board?.contents == null ? '' : widget.board?.contents);
+
+    if (widget.board?.email == null) {
+      _showIcon = true;
+    } else {
+      _showIcon = widget.board?.email == Common.email ? true : false;
+    }
+
+    if(widget.board == null) {
+      _updateFlag = false;
+    } else {
+      _updateFlag = true;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Write Board'),
         backgroundColor: Colors.amber[700],
         actions: [
-          IconButton(
-            onPressed: () async {
-              String date = DateFormat("yyyyMMddhhmmss").format(DateTime.now());
-              AddBoard addBoard = AddBoard('1', Common.email, Common.name,
-                  Common.nickName, tectitle.text, teccontents.text, date);
-              await addBoard.addUser();
-            },
-            icon: Icon(
-              Icons.save_alt_sharp,
+          Visibility(
+            child: IconButton(
+              onPressed: () async {
+                //String date = DateFormat("yyyyMMddhhmmss").format(DateTime.now());
+                String date = DateFormat("yyyyMMddhhmmss").format(await NTP.now());
+
+                if (_updateFlag == false) {
+                  AddBoard(
+                      '1',
+                      Common.email,
+                      Common.name,
+                      Common.nickName,
+                      tectitle.text,
+                      teccontents.text,
+                      date).writeBoard();
+                }
+
+                Navigator.of(context).pop(true);
+              },
+              icon: Icon(
+                Icons.save_alt_sharp,
+              ),
             ),
+            visible: _showIcon,
           ),
         ],
       ),
@@ -127,14 +155,13 @@ class AddBoard {
       this.contents, this.createdate);
 
   CollectionReference boardData =
-      FirebaseFirestore.instance.collection(Firebase.com_document_id);
+      FirebaseFirestore.instance.collection(DocFirebase.com_document_id);
 
-  Future<void> addUser() {
-    // Call the user's CollectionReference to add a new user
+  Future<void> writeBoard() {
     return boardData
         .add({
-          'documentID': boardData.doc(),
-          'boardID': boardID,
+          'documentID': boardData.id,
+          'boardID': DocFirebase.com_normal_boardID,
           'email': email,
           'name': name,
           'nickname': nickname,

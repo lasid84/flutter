@@ -7,7 +7,7 @@ class Common {
     } else {
       String dateWithT = date.substring(0, 8) + 'T' + date.substring(8);
       DateTime dateTime = DateTime.parse(dateWithT);
-      final f = new DateFormat('yyyy-MM-dd hh:mm');
+      final f = new DateFormat('yyyy-MM-dd hh:mm:ss');
       return f.format(dateTime);
     }
   }
