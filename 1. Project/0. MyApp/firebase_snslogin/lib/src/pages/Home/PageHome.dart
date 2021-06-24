@@ -126,7 +126,7 @@ Widget PageMain() {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
-<<<<<<< HEAD
+
                   // child: TextButton(
                   //   onPressed: () {},
                   //   child: Text(
@@ -141,18 +141,6 @@ Widget PageMain() {
                   child: btnMenu.renderTextBtn(
                     'Play RPS',
                     () => {},
-=======
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Play RPS',
-                      // style: TextStyle(color: Colors.white, fontSize: 15.0),
-                    ),
-                    // style: ButtonStyle(
-                    //   backgroundColor:
-                    //       MaterialStateProperty.all<Color>(Colors.grey),
-                    // ),
->>>>>>> d8256ca781f20d3c606630d1e83bff87c3ea6c85
                   ),
                 ),
                 Padding(
