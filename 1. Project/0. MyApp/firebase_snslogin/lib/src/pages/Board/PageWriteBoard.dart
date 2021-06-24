@@ -7,6 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:ntp/ntp.dart';
 
+//To do 
+//1. Form 위젯사용하여 validation 구현
+
 class PageWriteBoard extends StatefulWidget {
   final Board? board;
 

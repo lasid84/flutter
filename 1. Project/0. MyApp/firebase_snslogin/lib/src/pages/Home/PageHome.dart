@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_snslogin/src/Common/Common.dart';
+import 'package:firebase_snslogin/src/myButton/MainMenuButton.dart';
 import 'package:firebase_snslogin/src/pages/Board/PageBoard.dart';
 import 'package:firebase_snslogin/src/pages/Login/PageLogin.dart';
 import 'package:firebase_snslogin/src/pages/Login/ProviderFirebaseAuth.dart';
@@ -52,6 +53,8 @@ void menuAction(String value) {
 }
 
 Widget PageMain() {
+  var btnMenu = new MainMenuButton();
+
   return StreamBuilder(
     stream: FirebaseAuth.instance.authStateChanges(),
     builder: (BuildContext context, AsyncSnapshot<User?> snapshot) {
@@ -123,44 +126,56 @@ Widget PageMain() {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Play RPS',
-                      style: TextStyle(color: Colors.white, fontSize: 15.0),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.grey),
-                    ),
+                  // child: TextButton(
+                  //   onPressed: () {},
+                  //   child: Text(
+                  //     'Play RPS',
+                  //     style: TextStyle(color: Colors.white, fontSize: 15.0),
+                  //   ),
+                  //   style: ButtonStyle(
+                  //     backgroundColor:
+                  //         MaterialStateProperty.all<Color>(Colors.grey),
+                  //   ),
+                  // ),
+                  child: btnMenu.renderTextBtn(
+                    'Play RPS',
+                    () => {},
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Play RPS Remove one',
-                      style: TextStyle(color: Colors.white, fontSize: 15.0),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.grey),
-                    ),
+                  // child: TextButton(
+                  //   onPressed: () {},
+                  //   child: Text(
+                  //     'Play RPS Remove one',
+                  //     style: TextStyle(color: Colors.white, fontSize: 15.0),
+                  //   ),
+                  //   style: ButtonStyle(
+                  //     backgroundColor:
+                  //         MaterialStateProperty.all<Color>(Colors.grey),
+                  //   ),
+                  // ),
+                  child: btnMenu.renderOutlinedBtn(
+                    'Play RPS Remove one',
+                    () => {},
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Infinity Challenge',
-                      style: TextStyle(color: Colors.white, fontSize: 15.0),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.grey),
-                    ),
+                  // child: TextButton(
+                  //   onPressed: () {},
+                  //   child: Text(
+                  //     'Infinity Challenge',
+                  //     style: TextStyle(color: Colors.white, fontSize: 15.0),
+                  //   ),
+                  //   style: ButtonStyle(
+                  //     backgroundColor:
+                  //         MaterialStateProperty.all<Color>(Colors.grey),
+                  //   ),
+                  // ),
+                  child: btnMenu.renderElevatedBtn(
+                    'Infinity Challenge',
+                    () => {},
                   ),
                 ),
                 Padding(
