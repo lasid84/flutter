@@ -17,11 +17,10 @@ class _PageBoardState extends State<PageBoard> {
   //     .collection(Firebase.com_document_id)
   //     .orderBy('boardID', descending: true)
   //     .snapshots();
-  Query<Map<String, dynamic>> boardData =
-      FirebaseFirestore.instance.collection(DocFirebase.com_document_id)
+  Query<Map<String, dynamic>> boardData = FirebaseFirestore.instance
+      .collection(DocFirebase.com_document_id)
       .where('boardID', isEqualTo: DocFirebase.com_normal_boardID)
-      .orderBy('createdate', descending: true)
-      ;
+      .orderBy('createdate', descending: true);
 
   // Query<Map<String, dynamic>> boardNotice =
   // FirebaseFirestore.instance.collection(DocFirebase.com_document_id)
@@ -31,7 +30,6 @@ class _PageBoardState extends State<PageBoard> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Ask Developer'),
@@ -48,19 +46,17 @@ class _PageBoardState extends State<PageBoard> {
             return Center(child: CircularProgressIndicator());
           }
 
-          return
-              ListView(
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                children: snapshot.data!.docs.map((DocumentSnapshot document) {
-                  Map<String, dynamic> data =
-                      document.data() as Map<String, dynamic>;
+          return ListView(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            children: snapshot.data!.docs.map((DocumentSnapshot document) {
+              Map<String, dynamic> data =
+                  document.data() as Map<String, dynamic>;
 
-                  Board board = Board.fromJson(data);
-
-                  return _screenBoard(data, board);
-                }).toList(),
-              );
+              Board board = Board.fromJson(data);
+              return _screenBoard(data, board, document.reference.id);
+            }).toList(),
+          );
         },
       ),
       floatingActionButton: FloatingActionButton(
@@ -78,7 +74,7 @@ class _PageBoardState extends State<PageBoard> {
     );
   }
 
-  Widget _screenBoard(var data, var board) {
+  Widget _screenBoard(var data, var board, var id) {
     return SafeArea(
       child: Card(
         child: new ListTile(
@@ -86,10 +82,13 @@ class _PageBoardState extends State<PageBoard> {
           //   Icons.favorite,
           //   color: Colors.grey,
           // ),
-          // leading: FlutterLogo(
-          //   size: 36.0,
+          leading: FlutterLogo(
+            size: 36.0,
+          ),
+          // leading: Icon(
+          //   Icons.question_answer_outlined,
+          //   size: 50.0,
           // ),
-          leading: Icon(Icons.question_answer_outlined , size: 50.0,),
           title: Text(
             data['title'],
             style: TextStyle(fontSize: 20.0),
@@ -109,28 +108,29 @@ class _PageBoardState extends State<PageBoard> {
               SizedBox(
                 height: 10.0,
               ),
-              Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Row(
                   children: [
-                    Row(
-                      children: [
-                        Icon(Icons.account_box),
-                        Text(
-                          data['name'],
-                        ),
-                      ],
-                    ),
+                    Icon(Icons.account_box),
                     Text(
-                      Common.getDateFormat(data['createdate']),
+                      data['name'],
                     ),
-                  ]),
+                  ],
+                ),
+                Text(
+                  Common.getDateFormat(data['createdate']),
+                ),
+              ]),
             ],
           ),
           onTap: () {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => PageWriteBoard(board: board),
+                builder: (context) => PageWriteBoard(
+                  board: board,
+                  id: id,
+                ),
               ),
             );
           },
@@ -138,6 +138,4 @@ class _PageBoardState extends State<PageBoard> {
       ),
     );
   }
-
-
 }
