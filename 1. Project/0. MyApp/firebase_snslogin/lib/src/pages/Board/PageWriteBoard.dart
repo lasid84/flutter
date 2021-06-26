@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_snslogin/main.dart';
 import 'package:firebase_snslogin/src/Common/Common.dart';
 import 'package:firebase_snslogin/src/pages/Board/DocFirebase.dart';
 import 'package:firebase_snslogin/src/pages/Board/ModelBoard.dart';
@@ -6,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:ntp/ntp.dart';
 
-//To do 
+//To do
 //1. Form 위젯사용하여 validation 구현
 
 class PageWriteBoard extends StatefulWidget {
@@ -23,6 +24,7 @@ class _PageWriteBoardState extends State<PageWriteBoard> {
   late final TextEditingController tectitle;
   late final TextEditingController teccontents;
   late bool _showIcon, _updateFlag;
+  late bool _readonly;
 
   @override
   void dispose() {
@@ -41,8 +43,10 @@ class _PageWriteBoardState extends State<PageWriteBoard> {
 
     if (widget.id == null) {
       _showIcon = true;
+      _readonly = false;
     } else {
       _showIcon = widget.board?.email == Common.email ? true : false;
+      _readonly = widget.board?.email == Common.email ? false : true;
     }
 
     if (widget.id == null) {
@@ -50,6 +54,8 @@ class _PageWriteBoardState extends State<PageWriteBoard> {
     } else {
       _updateFlag = true;
     }
+
+    // GetComment _getComment = GetComment(widget.id.toString());
   }
 
   @override
@@ -103,16 +109,31 @@ class _PageWriteBoardState extends State<PageWriteBoard> {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextField(
               decoration: InputDecoration(hintText: "Title"),
               controller: tectitle,
+              //enableInteractiveSelection: _updateFlag,
+              readOnly: _readonly,
+              showCursor: !_readonly,
+              // onTap: () {
+              //   if (_readonly)
+              //     Focus.of(context).unfocus();
+              // },
             ),
             Container(
               child: TextField(
                 decoration: InputDecoration(hintText: "Contents"),
                 controller: teccontents,
                 maxLines: 50,
+                //enableInteractiveSelection: _updateFlag,
+                readOnly: _readonly,
+                showCursor: !_readonly,
+                // onTap: () {
+                //   if (_readonly)
+                //     Focus.of(context).unfocus();
+                // },
               ),
               height: MediaQuery.of(context).size.height * 0.4,
             ),
@@ -127,6 +148,11 @@ class _PageWriteBoardState extends State<PageWriteBoard> {
                 ),
               ],
             ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Divider(thickness: 2.0, color: Colors.black,),
+            GetComment(widget.id.toString()),
           ],
         ),
       ),
@@ -213,5 +239,78 @@ class UpdateBoard {
         })
         .then((value) => print("updated Board"))
         .catchError((error) => print("Failed to update board: $error"));
+  }
+}
+
+class GetComment extends StatelessWidget {
+  final String documentId;
+
+  GetComment(this.documentId);
+
+  @override
+  Widget build(BuildContext context) {
+    CollectionReference comments =
+        FirebaseFirestore.instance.collection(DocFirebase.com_comment_id);
+
+    return FutureBuilder<QuerySnapshot>(
+      future: comments.where('DOCID', isEqualTo: documentId.toString()).get(),
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Text("Something went wrong");
+        }
+
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: CircularProgressIndicator());
+        }
+
+        if (snapshot.connectionState == ConnectionState.done) {
+          // Map<String, dynamic> data = snapshot.data! as Map<String, dynamic>;
+          // return Text("↳ : ${data['COMMENT']}");
+
+          return Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+                child: ListView(
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  children: snapshot.data!.docs.map((DocumentSnapshot document) {
+                    Map<String, dynamic> data =
+                        document.data() as Map<String, dynamic>;
+
+                    BoardComment comment = BoardComment.fromJson(data);
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("↳ ${comment.comment}"),
+                        SizedBox(height: 10.0,),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SizedBox(width: 10.0,),
+                                Icon(Icons.account_circle_outlined),
+                                Text("${comment.name}"),
+                              ],
+                            ),
+                            Text(Common.getDateFormat(comment.createdate.toString())),
+                          ],
+                        ),
+                        Divider(thickness: 1.0, color: Colors.black12,),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+
+                      ],
+                    );
+                  }).toList(),
+                ),
+              ),
+          );
+        }
+
+        return Text("loading");
+      },
+    );
   }
 }
