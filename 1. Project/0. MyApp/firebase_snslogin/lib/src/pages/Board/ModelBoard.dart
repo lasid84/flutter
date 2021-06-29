@@ -44,3 +44,34 @@ class Board {
     };
   }
 }
+
+class BoardComment {
+  BoardComment({
+    required this.documentID,
+    required this.comment,
+    required this.name,
+    this.createdate,
+  });
+
+  BoardComment.fromJson(Map<String, Object?> json)
+      : this(
+    documentID: json['DOCID']! as String,
+    comment: json['COMMENT']! as String,
+    name: json['NAME']! as String,
+    createdate: json['CREATEDATE'] as String,
+  );
+
+  final String documentID;
+  final String comment;
+  final String name;
+  final String? createdate;
+
+  Map<String, Object?> toJson() {
+    return {
+      'DOCID': documentID,
+      'COMMENT': comment,
+      'NAME': name,
+      'CREATEDATE': createdate,
+    };
+  }
+}
