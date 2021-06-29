@@ -1,0 +1,4 @@
+1, freezed 구조가 바뀔시 build 필요
+2. get문을 통해 호출 가능
+3. copyWith를 통해 기존 인스턴스 복사 후 변경하고 싶은 값만 입력
+   ex) person4 = person1.copyWith(age:75);
