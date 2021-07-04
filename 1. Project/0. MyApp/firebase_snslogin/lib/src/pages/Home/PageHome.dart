@@ -1,10 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_snslogin/src/Common/Common.dart';
+import 'package:firebase_snslogin/src/DataBase/TablePersonalInfo.dart';
+import 'package:firebase_snslogin/src/DataBase/database.dart';
 import 'package:firebase_snslogin/src/myButton/MainMenuButton.dart';
 import 'package:firebase_snslogin/src/pages/Board/PageBoard.dart';
 import 'package:firebase_snslogin/src/pages/Login/PageLogin.dart';
 import 'package:firebase_snslogin/src/pages/Login/ProviderFirebaseAuth.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 
 class PageHome extends StatefulWidget {
@@ -15,6 +18,19 @@ class PageHome extends StatefulWidget {
 }
 
 class _PageHomeState extends State<PageHome> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    if(!GetIt.instance.isRegistered<DBDao>()) {
+      final db = Database();
+
+      GetIt.instance.registerSingleton<DBDao>(DBDao(db));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
