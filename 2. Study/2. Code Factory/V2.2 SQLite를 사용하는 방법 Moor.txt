@@ -1,0 +1,9 @@
+1. Diary라는 테이블 생성 후 데이터를 가져올때
+  1) stream으로 리턴 받을시 select(diary).watch();
+     - watch는 기본적으로 리스트형태를 반환하지만 wathchSingle 은 1건이라는 확신이 있을때 사용(키값으로 조회시)
+  2) future로 리턴 받을시 select(diary).get();
+
+2. 테이블 생성 후 list로 리턴 받을려면 테이블명 + Data 사용
+  - Diary 테이블 생성시 DiaryData 자동 생성 되고 사용시 리스트로 리턴 받을 수 있다
+
+3. DiaryCompanion은 insert시 사용

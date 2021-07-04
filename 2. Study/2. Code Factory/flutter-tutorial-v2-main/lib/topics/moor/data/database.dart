@@ -22,21 +22,21 @@ class Database extends _$Database {
   Database() : super(_openConnection());
 
   @override
-  int get schemaVersion => 2;
+  int get schemaVersion => 1;
 
-  @override
-  MigrationStrategy get migration => MigrationStrategy(
-        onCreate: (Migrator m) {
-          return m.createAll();
-        },
-        onUpgrade: (Migrator m, int from, int to) async {
-          if (from == 1) {
-            await m.createTable(tag);
-            await m.createTable(diaryWithTag);
-          }
-        },
-        beforeOpen: (detail) async {
-          await customStatement('PRAGMA foreign_key = ON');
-        },
-      );
+  // @override
+  // MigrationStrategy get migration => MigrationStrategy(
+  //       onCreate: (Migrator m) {
+  //         return m.createAll();
+  //       },
+  //       onUpgrade: (Migrator m, int from, int to) async {
+  //         if (from == 1) {
+  //           await m.createTable(tag);
+  //           await m.createTable(diaryWithTag);
+  //         }
+  //       },
+  //       beforeOpen: (detail) async {
+  //         await customStatement('PRAGMA foreign_key = ON');
+  //       },
+  //     );
 }
