@@ -1,0 +1,18 @@
+1. KEY?
+  1) 위젯이 위젯트리상 이동하면서 위젯의 STATE를 보존
+  2) 위젯을 유니크하게 식별
+  3) STATE란 UI가 변경되도록 영향을 미치는 데이터이다
+  4) Flutter는 기본적으로 위젯의 타입으로 식별
+  5) Stateful위젯의 식별을 위해서는 key가 필요
+
+2. 종류
+  1) Global key
+     - 전역변수와 비슷
+     - 외부위젯에서 접근하기위한 키
+     - 앱 전체을 통틀어 중복되지 않음
+     - 
+  2) Value key
+     - value값을 가지는 Stateful위젯에 사용(텍스트박스등등 입력된 값을 유지)
+  3) Unique key
+  4) Object key
+  5) Page storage key

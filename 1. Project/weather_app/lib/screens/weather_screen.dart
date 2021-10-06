@@ -48,8 +48,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
     airIcon = model.getAirIcon(index)!;
     airState = model.getAirCondition(index)!;
 
-    dust1 = airData['list'][0]['components']['pm10'];
-    dust2 = airData['list'][0]['components']['pm2_5'];
+    dust1 = airData['list'][0]['components']['pm10'].toDouble();
+    dust2 = airData['list'][0]['components']['pm2_5'].toDouble();
   }
 
   String getSystemTime() {
